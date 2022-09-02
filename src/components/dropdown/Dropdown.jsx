@@ -49,7 +49,7 @@ export function Dropdown(props) {
                     ? orderList(item.toLowerCase())
                     : setShowLi(!showLi)
                 }
-                key={i}
+                key={item}
                 className="listFilter"
               >
                 {item}
@@ -63,7 +63,7 @@ export function Dropdown(props) {
                         )
                         .sort()
                         .map((e) => (
-                        showLi?<li onClick={() => orderList(e)}>{e}</li>:null
+                        showLi?<li key={e} onClick={() => orderList(e)}>{e}</li>:null
                         ))
                     )
                   : ""}

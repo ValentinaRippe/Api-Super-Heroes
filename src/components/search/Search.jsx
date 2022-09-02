@@ -24,7 +24,7 @@ export function Search() {
           onChange={(e) => setSearchValue(e.target.value)}
           required
         />
-        <button className="buttonSearch" type="submit" value="Search">Search</button>
+        <button className="buttonSearch" type="submit" value="Search">☌</button>
       </form>
     </div>
   );

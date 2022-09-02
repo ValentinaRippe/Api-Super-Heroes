@@ -2,7 +2,7 @@ import "./Card.css";
 
 export function Card({ item }) {
   return (
-    <div className="card" key={item.id}>
+    <div className="card">
       <img
         className="card_imgHero"
         src={

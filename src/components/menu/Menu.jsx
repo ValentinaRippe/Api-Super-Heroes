@@ -58,7 +58,7 @@ export function Menu() {
                 />
               </div>
               <div className="filter">
-                <h2 onClick={()=>onRefresh()} className="init">Refresh</h2>
+                <h2 onClick={()=>onRefresh()} className="init">Refresh ⟳</h2>
               </div>
             </div>
             <div className="imgHero">
