@@ -1,0 +1,66 @@
+.card{
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: calc(33% - 4rem);
+    height: 10rem;
+    border-radius: 15px;
+    box-shadow: 0 3px 9px rgb(66, 66, 66);
+    margin: 0.8rem;
+    overflow: hidden;
+}
+.card:hover{
+    transform: scale(1.02);
+}
+
+.card .card_imgHero{
+    position: absolute;
+    width: 100%;
+}
+
+.card .infoHero{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    color: #fff;
+}
+
+.card span div{
+    display: flex;
+    align-items: flex-start;
+    min-width: 100%;
+    background: linear-gradient(90deg, rgb(0, 0, 7) 20%, rgba(9,9,121,0) 100%);
+    padding: 5px 10px 0 10px ;
+}
+
+.card_nameHero h3{
+    margin: 0;
+}
+
+.iconHero{
+    position: absolute;
+    width: 40px;
+    right: 0;
+    bottom: 0;
+    margin: 0.4rem;
+    -webkit-filter: drop-shadow(5px 5px 5px rgb(209, 209, 209));
+    filter: drop-shadow(5px 5px 5px rgb(207, 207, 207));
+}
+
+@media screen and (max-width: 768px) {
+    .card{
+        width: calc(50% - 4rem);
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .card{
+        width: calc(90% - 4rem);
+    }
+}
