@@ -62,3 +62,15 @@
     -webkit-filter: drop-shadow(5px 5px 5px rgb(209, 209, 209));
     filter: drop-shadow(5px 5px 5px rgb(207, 207, 207));
 }
+
+@media screen and (max-width: 768px) {
+    .card{
+        width: calc(50% - 4rem);
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .card{
+        width: calc(90% - 4rem);
+    }
+}

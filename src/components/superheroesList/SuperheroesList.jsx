@@ -7,7 +7,7 @@ import "./SuperheroesList.css";
 export function SuperheroesList() {
   const listHeroesState = useSelector((state) => state.listHeroes.dataFilter);
   const initialId = 1;
-  const finalId = 20;
+  const finalId = 150;
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -24,7 +24,6 @@ export function SuperheroesList() {
       <div className="cards">
         {listHeroesState && listHeroesState
         .filter((v,i,a)=>a.findIndex(v2=>(v2.id===v.id))===i)
-        .sort((a, b) => a.name > b.name ? 1 : -1)
         .map((item) => (
           <div className="card" key={item.id}>
             <img
