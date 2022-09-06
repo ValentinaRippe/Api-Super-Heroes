@@ -1,0 +1,41 @@
+.order{
+    display: flex;
+    flex-direction: column;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.container span{
+    margin: 0 1rem 0 1rem;
+    font-weight: bolder;
+}
+.Cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.buttonPage{
+    cursor: pointer;
+    background-color: transparent;
+    border: transparent;
+    color: rgb(78, 0, 0);
+    font-size: 30px;
+    margin: 0;
+}
+.buttonPage:hover{
+    -webkit-filter: drop-shadow(5px 2px 1px rgba(34, 34, 34, 0.473));
+    filter: drop-shadow(5px 2px 1px rgba(34, 34, 34, 0.356));
+}
+
+@media (min-width: 768px){
+    .container{
+        flex-direction: row;
+    }
+    .buttonPage{
+        font-size: 30px ;
+    }
+}

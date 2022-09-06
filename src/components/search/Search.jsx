@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import { useDispatch } from "react-redux";
 import { searchHeroes } from "../../features/listHeroes/listHeroesSlice";
+import {BiSearchAlt} from "react-icons/bi";
 import './Search.css'
 
 export function Search() {
@@ -19,12 +20,12 @@ export function Search() {
         <input
           className="inputSearch"
           type="text"
-          placeholder="Search song or artist..."
+          placeholder="Search..."
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
           required
         />
-        <button className="buttonSearch" type="submit" value="Search">☌</button>
+        <button className="buttonSearch" type="submit" value="Search"><BiSearchAlt/></button>
       </form>
     </div>
   );

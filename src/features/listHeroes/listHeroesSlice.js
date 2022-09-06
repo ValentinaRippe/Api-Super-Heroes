@@ -4,52 +4,89 @@ import apiHeroes from "../../api";
 
 export const getHeroesAsync = createAsyncThunk(
     'searchHeroes/apiHeroes',
-    async (id) => {
-        const response = await apiHeroes.get(`${id}`);
+    async (dispatch) => {
+        const res = await apiHeroes.get(`all.json`);
         // The value we return becomes the `fulfilled` action payload
-        return response.data
+        dispatch(getHeroes(res.data))
+        return res.data
     }
 );
+
 
 export const listHeroesSlice = createSlice({
     name: 'listHeroes',
     initialState: {
         data: [],
         dataFilter: [],
+        load: false,
+        currentPages: 0,
         appearance: [
-            {"gender":[]},
-            {"race":[]},
-            {"height":[]},
-            {"weight":[]},
-            {"eye-color":[]},
-            {"hair-color":[]},
-        ]
+            { "gender": [] },
+            { "race": [] },
+            { "height": [] },
+            { "weight": [] },
+            { "eyeColor": [] },
+            { "hairColor": [] },
+        ],
+        order: {
+            sort: '',
+            filter: ''
+        }
     },
     reducers: {
+        getHeroes: (state, { payload }) => {
+            state.currentPages = 0
+            state.load = false
+            state.data = payload
+            state.dataFilter = payload
+            state.load = true
+        },
         searchHeroes: (state, { payload }) => {
-            state.dataFilter = state.data.sort().filter(item => (
-                item.name.toLowerCase().includes(payload.toLowerCase())
-            ))
+            state.currentPages = 0
+            state.load = false
+            state.dataFilter = state.data.filter((item) =>
+                item.name.toLowerCase().includes(payload.toLowerCase()))
+            state.load = true
         },
         orderData: (state, { payload }) => {
-            console.log(payload)
+            state.currentPages = 0
+            state.load = false
             state.dataFilter = payload
-        }
+            state.load = true
+        },
+        curPages: (state, {payload})=>{
+            state.currentPages = payload
+        },
+        selectFilter: (state, { payload }) => {
+            state.order.sort = ''
+            state.order.filter = payload
+        },
+        selectSort: (state, { payload }) => {
+            state.order.sort = payload
+        },
+        resetState: (state) => {
+            state.currentPages = 0
+            state.order = {
+                sort: '',
+                filter: ''
+            }
+            state.dataFilter = state.data
+        },
     },
     extraReducers: {
         [getHeroesAsync.fulfilled]: (state, { payload }) => {
-            state.appearance[0]["gender"].push(payload.appearance["gender"])
-            state.appearance[1]["race"]?.push(payload.appearance["race"])
-            state.appearance[2]["height"]?.push(payload.appearance["height"][1])
-            state.appearance[3]["weight"]?.push(payload.appearance["weight"][1])
-            state.appearance[4]["eye-color"]?.push(payload.appearance["eye-color"])
-            state.appearance[5]["hair-color"]?.push(payload.appearance["hair-color"])
-
-            state.data = [...state.data, payload].sort((a, b) => a.name > b.name ? 1 : -1);
-            state.dataFilter = [...state.dataFilter, payload].sort((a, b) => a.name > b.name ? 1 : -1);
-        },
+            payload.map(pay => {
+                state.appearance[0]["gender"].push(pay.appearance["gender"])
+                state.appearance[1]["race"].push(pay.appearance["race"])
+                state.appearance[2]["height"].push(pay.appearance["height"][1])
+                state.appearance[3]["weight"].push(pay.appearance["weight"][1])
+                state.appearance[4]["eyeColor"].push(pay.appearance["eyeColor"])
+                state.appearance[5]["hairColor"].push(pay.appearance["hairColor"])
+                return payload
+            })
+        }
     }
 })
 
 
-export const { addHeroes, searchHeroes, initialData, orderData } = listHeroesSlice.actions;
+export const { searchHeroes, getHeroes, orderData, selectFilter, selectSort, resetState, curPages } = listHeroesSlice.actions;

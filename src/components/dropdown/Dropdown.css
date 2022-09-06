@@ -16,13 +16,13 @@
   font-size: 16px !important;
 }
 .dropdown:hover {
-  background-color: rgba(36, 36, 36, 0.45);
+  background-color: rgba(36, 1, 1, 0.623);
 }
 .section-dropdown {
   padding: 5px;
   background-color: #111;
   margin: 0;
-  max-height: 300px;
+  max-height: 200px;
   overflow: hidden;
 }
 .section-dropdown:hover{
@@ -33,7 +33,7 @@
   padding: 0.5px 0 10px 0;
   list-style: none;
   font-size: 14px !important;
-  font-weight: 600;
+  font-weight: bolder;
 }
 .listFilter:hover{
   background-color: rgb(0, 0, 0);
