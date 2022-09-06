@@ -6,8 +6,8 @@ export function Card({ item }) {
       <img
         className="card_imgHero"
         src={
-          item.image.url
-            ? item.image.url
+          item.images.lg
+            ? item.images.lg
             : "https://cutewallpaper.org/24/hero-png/download-hero-free-png-photo-images-and-clipart-freepngimg.png"
         }
         alt=""

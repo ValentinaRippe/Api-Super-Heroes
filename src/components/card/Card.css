@@ -4,8 +4,9 @@
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
-    width: calc(33% - 4rem);
-    height: 10rem;
+    min-width: calc(33% - 4rem);
+    max-width: calc(33% - 4rem);
+    height: 9rem;
     border-radius: 15px;
     box-shadow: 0 3px 9px rgb(66, 66, 66);
     margin: 0.8rem;
@@ -55,12 +56,14 @@
 
 @media screen and (max-width: 768px) {
     .card{
-        width: calc(50% - 4rem);
+        min-width: calc(50% - 4rem);
+        max-width: calc(50% - 4rem);
     }
 }
 
 @media screen and (max-width: 375px) {
     .card{
-        width: calc(90% - 4rem);
+        min-width: calc(90% - 4rem);
+        max-width: calc(90% - 4rem);
     }
 }

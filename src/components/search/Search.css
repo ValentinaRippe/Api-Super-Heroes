@@ -28,15 +28,14 @@
     width: 30px;
     background-color: transparent;
     border: transparent;
-    color: #000000;
-    transform: rotate(180deg);
+    color: rgb(78, 0, 0);
     font-size: 24px;
 }
 .buttonSearch:hover{
     cursor: pointer;
     transform: scale(1.1);
     -webkit-filter: drop-shadow(5px 5px 5px #222);
-    filter: drop-shadow(5px 5px 1px #222);
+    filter: drop-shadow(5px 5px 1px rgba(34, 34, 34, 0.322));
 }
 @media (min-width: 768px){
     .inputSearch{
