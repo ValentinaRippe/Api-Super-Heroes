@@ -9,7 +9,7 @@ Open The superhero's app in your local enviroment or in the [Official Deployment
  - Filter
  - List
  - Search
-<img src="https://user-images.githubusercontent.com/94970159/188152500-28dec0ca-0ed1-43b3-83f4-0f3af0383031.png" width="600" align='center'>
+<img src="https://user-images.githubusercontent.com/94970159/188544200-b9dfb616-73c3-46c8-951b-ee29bf33daca.png" width="600" align='center'>
 
 ### Documentation
 [Official Documentation](https://www.canva.com/design/DAFLFWiyNeU/8DIEt9wsp1FPFDyWDElGUg/view?utm_content=DAFLFWiyNeU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton#2)
